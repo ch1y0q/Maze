@@ -43,6 +43,7 @@ double sample(double x, double y)
 
 int main()
 {
-    main_loop();
+
+    main_loop(0, 1, 0, 0);
     return 0;
 }

@@ -62,22 +62,6 @@ C:/Users/qiyue/CLionProjects/Maze/graphics.h
 maths.h
 C:/Users/qiyue/CLionProjects/Maze/maths.h
 
-C:/Users/qiyue/CLionProjects/Maze/image.cpp
-cassert
--
-cstdio
--
-cstdlib
--
-cstring
--
-image.h
-C:/Users/qiyue/CLionProjects/Maze/image.h
-macro.h
-C:/Users/qiyue/CLionProjects/Maze/macro.h
-maths.h
-C:/Users/qiyue/CLionProjects/Maze/maths.h
-
 C:/Users/qiyue/CLionProjects/Maze/image.h
 
 C:/Users/qiyue/CLionProjects/Maze/input.cpp
@@ -120,20 +104,6 @@ C:/Users/qiyue/CLionProjects/Maze/macro.h
 cstdlib
 -
 
-C:/Users/qiyue/CLionProjects/Maze/maths.cpp
-cassert
--
-cmath
--
-cstdio
--
-random
--
-macro.h
-C:/Users/qiyue/CLionProjects/Maze/macro.h
-maths.h
-C:/Users/qiyue/CLionProjects/Maze/maths.h
-
 C:/Users/qiyue/CLionProjects/Maze/maths.h
 
 C:/Users/qiyue/CLionProjects/Maze/platform.h
@@ -141,24 +111,4 @@ graphics.h
 C:/Users/qiyue/CLionProjects/Maze/graphics.h
 image.h
 C:/Users/qiyue/CLionProjects/Maze/image.h
-
-C:/Users/qiyue/CLionProjects/Maze/win32.cpp
-assert.h
--
-stdlib.h
--
-string.h
--
-direct.h
--
-windows.h
--
-graphics.h
-C:/Users/qiyue/CLionProjects/Maze/graphics.h
-image.h
-C:/Users/qiyue/CLionProjects/Maze/image.h
-macro.h
-C:/Users/qiyue/CLionProjects/Maze/macro.h
-platform.h
-C:/Users/qiyue/CLionProjects/Maze/platform.h
 

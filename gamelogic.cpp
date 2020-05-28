@@ -15,26 +15,40 @@
 #include <iostream>
 using namespace std;
 
+// default assignments will be overwritten in main_loop
 int WINDOW_WIDTH = 720;
 int WINDOW_HEIGHT = 720;
 int MAZE_WIDTH = 40;
 int MAZE_HEIGHT = 20;
+
 
 float bar_boundary_rate = 0.0;
 float maze_margin_rate  = 0.04;
 
 float mouse_moving_interval = 0.15;
 
-
+/*
 float maze_margin_bottom = W_H * maze_margin_rate;
 float maze_margin_top    = W_H - maze_margin_bottom;
 float maze_margin_left   = maze_margin_bottom;
 float maze_margin_right  = W_W * (1.0 - bar_boundary_rate) - maze_margin_bottom;
 float maze_area_width  = maze_margin_right - maze_margin_left;
 float maze_area_height = maze_margin_top - maze_margin_bottom;
+*/
+float maze_margin_bottom ;
+float maze_margin_top    ;
+float maze_margin_left   ;
+float maze_margin_right  ;
+float maze_area_width    ;
+float maze_area_height   ;
+
 
 framebuffer_t *framebuffer;
 framebuffer_t *tempbuffer;
+
+int color_accent = 0;
+int players = 1;
+int timing = 0;
 
 /* maze management
  *
@@ -111,6 +125,7 @@ void create_random_permutation(vector<int>& res)
         res[k] = t1[i];
     }
 }
+
 
 /* go          up,          down,       left, right */
 int offa[4] = {MAZE_WIDTH, -MAZE_WIDTH, -1,   1};   //offset in vector isaccessed
@@ -190,7 +205,7 @@ void maze_t::draw()
     for (int i = 0; i < rwh; ++i) {
         for (int j = 0; j < rmw; ++j) {
             if (this->mazemap[i * rmw + j])
-                draw_filleted_box(MM_L + spx + j * ele_size, MM_B + spy + i * ele_size, 0, box_length, box_length, fl, vec3_new(0.4, 0.4, 0.4));
+                draw_filleted_box(MM_L + spx + j * ele_size, MM_B + spy + i * ele_size, 0, box_length, box_length, fl, color_accent_list_maze[color_accent]);
         }
     }
 }
@@ -221,7 +236,7 @@ ivec4_t mouse_t::AABB()
 
 void mouse_t::draw()
 {
-    draw_circle(p_x, p_y, ele_size / 2.2, vec3_new(0.9, 0.9, 0.9));
+    draw_circle(p_x, p_y, ele_size / 2.2, color_accent_list_mouse[color_accent]);
 }
 
 void mouse_t::draw(float dt)
@@ -347,15 +362,29 @@ int in_game_loop(window_t *window)
     return 0;
 }
 
-void main_loop()
+void main_loop(int difficulty, int color_accent, int players, int timing)
 {
+    ::color_accent = color_accent;
     window_t *window;
+    M_W = difficulty_list[difficulty].x;
+    M_H = difficulty_list[difficulty].y;
+    W_W = difficulty_list[difficulty].z;
+    W_H = difficulty_list[difficulty].w;
+    maze_margin_bottom = W_H * maze_margin_rate;
+    maze_margin_top    = W_H - maze_margin_bottom;
+    maze_margin_left   = maze_margin_bottom;
+    maze_margin_right  = W_W * (1.0 - bar_boundary_rate) - maze_margin_bottom;
+    maze_area_width  = maze_margin_right - maze_margin_left;
+    maze_area_height = maze_margin_top - maze_margin_bottom;
+
+    offa[0] = M_W;
+    offa[1] = -M_W;
+
     window = window_create("Maze", W_W, W_H);
     framebuffer = framebuffer_create(W_W, W_H);
     tempbuffer  = framebuffer_create(W_W, W_H);
-    
     for (int i = 0; i < W_W * W_H ; ++i)
-        framebuffer->colorbuffer[i] = vec4_new(0.02,0.05,0.06,1);
+        framebuffer->colorbuffer[i] = color_accent_list_bg[color_accent];
     
     while (in_game_loop(window)) {
         cout << " restart " << endl;
