@@ -31,6 +31,8 @@ input.h
 C:/Users/qiyue/CLionProjects/Maze/input.h
 iostream
 -
+iomanip
+-
 
 C:/Users/qiyue/CLionProjects/Maze/gamelogic.h
 graphics.h
@@ -103,7 +105,19 @@ macro.h
 C:/Users/qiyue/CLionProjects/Maze/macro.h
 cstdlib
 -
+iostream
+-
 
+C:/Users/qiyue/CLionProjects/Maze/maths.h
+
+C:/Users/qiyue/CLionProjects/Maze/platform.cpp
+cassert
+-
+graphics.h
+C:/Users/qiyue/CLionProjects/Maze/graphics.h
+image.h
+C:/Users/qiyue/CLionProjects/Maze/image.h
+maths.h
 C:/Users/qiyue/CLionProjects/Maze/maths.h
 
 C:/Users/qiyue/CLionProjects/Maze/platform.h
@@ -111,4 +125,24 @@ graphics.h
 C:/Users/qiyue/CLionProjects/Maze/graphics.h
 image.h
 C:/Users/qiyue/CLionProjects/Maze/image.h
+
+C:/Users/qiyue/CLionProjects/Maze/win32.cpp
+assert.h
+-
+stdlib.h
+-
+string.h
+-
+direct.h
+-
+windows.h
+-
+graphics.h
+C:/Users/qiyue/CLionProjects/Maze/graphics.h
+image.h
+C:/Users/qiyue/CLionProjects/Maze/image.h
+macro.h
+C:/Users/qiyue/CLionProjects/Maze/macro.h
+platform.h
+C:/Users/qiyue/CLionProjects/Maze/platform.h
 

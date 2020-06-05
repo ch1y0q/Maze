@@ -6,7 +6,7 @@
 
 typedef struct window window_t;
 typedef enum {KEY_A, KEY_D, KEY_S, KEY_W, KEY_SPACE, KEY_ESCAPE,
-              KEY_UP, KEY_LEFT, KEY_DOWN, KEY_RIGHT, KEY_SHIFT, KEY_NUM} keycode_t;
+              KEY_UP, KEY_LEFT, KEY_DOWN, KEY_RIGHT, KEY_SHIFT, KEY_RETURN, KEY_NUM} keycode_t;
 typedef enum {BUTTON_L, BUTTON_R, BUTTON_NUM} button_t;
 typedef struct {
     void (*key_callback)(window_t *window, keycode_t key, int pressed);

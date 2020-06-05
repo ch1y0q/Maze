@@ -108,5 +108,8 @@ void update_key(window_t *window, float curr_time, record_t *record) {
         if (input_key_pressed(window, KEY_ESCAPE)) {
             record->key[KEY_ESCAPE] = 1;
         }
+        if (input_key_pressed(window, KEY_RETURN)) {
+            record->key[KEY_RETURN] = 1;
+        }
     }
 }

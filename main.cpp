@@ -2,48 +2,36 @@
 #include "macro.h"
 
 #include <cstdlib>
+#include <iostream>
 
-
-
-
-
-
-/*
-double circleSDF(double x, double y, double cx, double cy, double r)
-{
-    double ux = x - cx, uy = y - cy;
-    return sqrtf(ux * ux + uy * uy) - r;
-}
-
-double trace(double ox, double oy, double dx, double dy)
-{
-    double t = 0.0;
-    for (int i = 0; i < MAX_STEP && t < MAX_DISTANCE; i++) {
-        double sd = circleSDF(ox + dx * t, oy + dy * t, 0.5f, 0.5f, 0.1f);
-        if (sd < EPSILON)
-            return 2.0;
-        t += sd;
+void instruction(int &difficulty, int &color_accent, int &players, int &timing) {
+    players = 1;
+    timing = 0;
+    std::cout << "Welcome to the maze game!\n";
+    std::cout << "Please enter difficulty(0~9)...\n";
+    std::cin >> difficulty;
+    while (difficulty < 0 || difficulty > 9) {
+        std::cout << "Please enter difficulty(0~9)...\n";
+        std::cin >> difficulty;
     }
-    return 0.0;
-}
-
-double sample(double x, double y)
-{
-    double sum = 0.0;
-    for (int i = 0; i < N; i++) {
-        // double a = TWO_PI * rand() / RAND_MAX;
-        // double a = TWO_PI * i / N;
-        double a = TWO_PI * (i + (double)rand() / RAND_MAX) / N;
-        sum += trace(x, y, cosf(a), sinf(a));
+    std::cout << "Please enter color_accent(0~9)...\n";
+    std::cin >> color_accent;
+    while (color_accent < 0 || color_accent > 9) {
+        std::cout << "Please enter color_accent(0~9)...\n";
+        std::cin >> color_accent;
     }
-    return sum / N;
+    std::cout << "Would you enable timing? (1=Y, 0=N)...\n";
+    std::cin >> timing;
+    while (timing != 0 && timing != 1) {
+        std::cout << "Would you enable timing? (1=Y, 0=N)...\n";
+        std::cin >> timing;
+    }
+    std::cout << "Loading...\n\n";
 }
 
-*/
-
-int main()
-{
-
-    main_loop(0, 1, 0, 0);
+int main() {
+    int difficulty = 0, color_accent = 1, players = 1, timing = 1;
+    instruction(difficulty, color_accent, players, timing);
+    main_loop(difficulty, color_accent, players, timing);
     return 0;
 }

@@ -49,7 +49,8 @@ static void handle_key_message(window_t *window, WPARAM virtual_key,
 	case VK_DOWN:   key = KEY_DOWN;     break;
 	case VK_RIGHT:  key = KEY_RIGHT;    break;
 	case VK_SHIFT:  key = KEY_SHIFT;    break;
-	default:       key = KEY_NUM;       break;
+	case VK_RETURN: key = KEY_RETURN;    break;
+	default:        key = KEY_NUM;       break;
 	}
 	if (key < KEY_NUM) {
 		window->keys[key] = pressed;
